@@ -1,6 +1,13 @@
 public class Hawaiian {
     public static void isHawaiian(String s){
-
+        Letter letter = new Letter();
+        for (int i = 0; i < s.length(); i++){
+            letter= new Letter(s.charAt(i));
+            if ( letter.isConsonant() || i != (s.length()-1) ){
+                Letter temp = new Letter(s.charAt(i+1));
+                if (temp.isConsonant()) return false;
+            }
+        }
     }
 
 
